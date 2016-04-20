@@ -1,6 +1,6 @@
 == Shrine
 
-This is a concept built using Postgres as the data layer, Rails as the middle stack, and AngularJS on the front end.  Watch as the hilarity and hijinks ensue!
+This is a concept built using Rails as the middle stack, Postgres as the backend data layer, and AngularJS on the front end. That's right, we're using the RAP stack!  Watch as the hilarity and hijinks ensue!!
 
 * more coming soon...
 
