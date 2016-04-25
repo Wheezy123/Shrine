@@ -16,21 +16,35 @@ section.search-results
   header
     h1.h3
       | Results
-  table.table.table-striped
-    thead
-      tr
-        th() First Name
-        th() Last Name
-        th() Email
-        th() Joined
-    tbody
-      - @customers.each do |customer|
-        tr
-          td
-            =customer.first_name
-          td
-            =customer.last_name
-          td
-            =customer.email
-          td
-            =customer.created_at.to_date
+  / table.table.table-striped
+  /   thead
+  /     tr
+  /       th() First Name
+  /       th() Last Name
+  /       th() Email
+  /       th() Joined
+  /   tbody
+  /     - @customers.each do |customer|
+  /       tr
+  /         td
+  /           =customer.first_name
+  /         td
+  /           =customer.last_name
+  /         td
+  /           =customer.email
+  /         td
+  /           =customer.created_at.to_date
+
+  ol.list-group
+    -@customers.each do |customer|
+      li.list-group-item.clearfix
+        small
+          h3.pull-right
+            ="Joined #{customer.created_at.to_date}"
+        h2
+          ="#{customer.first_name} #{customer.last_name}"
+        h4
+          =customer.email
+        small
+          h5
+            =customer.username
