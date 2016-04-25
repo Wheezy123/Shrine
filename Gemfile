@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'bower-rails'
 gem 'faker'
+gem 'pry-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

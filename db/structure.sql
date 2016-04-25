@@ -30,6 +30,36 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: customer_search_terms; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE customer_search_terms (
+    id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: customer_search_terms_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE customer_search_terms_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: customer_search_terms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE customer_search_terms_id_seq OWNED BY customer_search_terms.id;
+
+
+--
 -- Name: customers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -116,6 +146,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY customer_search_terms ALTER COLUMN id SET DEFAULT nextval('customer_search_terms_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY customers ALTER COLUMN id SET DEFAULT nextval('customers_id_seq'::regclass);
 
 
@@ -124,6 +161,14 @@ ALTER TABLE ONLY customers ALTER COLUMN id SET DEFAULT nextval('customers_id_seq
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: customer_search_terms_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY customer_search_terms
+    ADD CONSTRAINT customer_search_terms_pkey PRIMARY KEY (id);
 
 
 --
@@ -188,4 +233,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160416143812');
 INSERT INTO schema_migrations (version) VALUES ('20160416175942');
 
 INSERT INTO schema_migrations (version) VALUES ('20160422032112');
+
+INSERT INTO schema_migrations (version) VALUES ('20160424224902');
 
