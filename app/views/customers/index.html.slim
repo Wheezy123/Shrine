@@ -35,6 +35,8 @@ section.search-results
   /         td
   /           =customer.created_at.to_date
 
+  =render partial:"pager", locals: {keywords: @keywords, page: @page}
+
   ol.list-group
     -@customers.each do |customer|
       li.list-group-item.clearfix
@@ -48,3 +50,8 @@ section.search-results
         small
           h5
             =customer.username
+
+  =render partial: "pager", locals: { keywords: @keywords, page: @page}
+
+
+
