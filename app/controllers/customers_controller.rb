@@ -16,6 +16,11 @@ class CustomersController < ApplicationController
     else
       @customers = Customer.all.limit(20)
     end
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @customers}
+    end
   end
 
 end
