@@ -1,0 +1,9 @@
+article ng-app="angular_test"
+  header
+    h1() Hello {{name}}
+
+  section
+    form.form-inline
+      div.form-group
+        label() Name
+        input.form-control(name="name" type="text" placeholder="Enter your name" ng-model="name" autofocus)

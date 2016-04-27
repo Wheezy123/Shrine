@@ -1,0 +1,12 @@
+var app = angular.module("customers", []);
+
+app.controller("CustomerSearchController", [
+  '$scope',
+  function($scope){
+    // var searchCtrl = this;
+
+    $scope.search = function(searchTerm){
+      $scope.searchedFor = searchTerm;
+    };
+  }
+]);
