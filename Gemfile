@@ -19,6 +19,10 @@ gem 'devise'
 gem 'bower-rails'
 gem 'faker'
 gem 'pry-rails'
+gem "angular-rails-templates"
+gem 'sprockets', '2.12.3'
+gem "tilt", "2.0.2"
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
